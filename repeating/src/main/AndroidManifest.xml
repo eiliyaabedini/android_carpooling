@@ -1,0 +1,11 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.deftmove.repeating">
+
+    <application>
+        <activity
+            android:name=".RepeatingActivity"
+            android:label="@string/repeating_screen_title"
+            android:theme="@style/AppTheme.WithWhiteActionBar" />
+    </application>
+
+</manifest>

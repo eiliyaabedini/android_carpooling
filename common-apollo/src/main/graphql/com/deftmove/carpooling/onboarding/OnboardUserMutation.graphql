@@ -1,0 +1,7 @@
+mutation OnBoardUserMutation($input: OnboardUserInput!) {
+    onboardUser(input: $input) {
+        user {
+            ... UserFragment
+        }
+    }
+}

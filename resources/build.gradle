@@ -1,0 +1,12 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply from: "$project.rootProject.projectDir/gradle/defaultAndroidLib.gradle"
+
+dependencies {
+    api "androidx.appcompat:appcompat:$APPCOMPAT"
+//    api "androidx.appcompat:appcompat-resources:$APPCOMPAT"
+    api "androidx.core:core-ktx:$CORE_KTX"
+    api "androidx.constraintlayout:constraintlayout:$CONSTRAINT_LAYOUT"
+
+    api "com.google.android.material:material:$ANDROID_MATERIAL"
+}

@@ -1,0 +1,7 @@
+mutation UpdateUserNoResponseMutation($input: UpdateUserInput!) {
+    updateUser(input: $input) {
+        user {
+            id
+        }
+    }
+}

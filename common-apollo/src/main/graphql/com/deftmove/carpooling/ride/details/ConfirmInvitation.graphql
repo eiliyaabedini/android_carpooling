@@ -1,0 +1,7 @@
+mutation ConfirmInvitation($input: ConfirmInvitationInput!) {
+    confirmInvitation(input: $input) {
+        invitation {
+            ... InvitationForRideDetailsFragment
+        }
+    }
+}

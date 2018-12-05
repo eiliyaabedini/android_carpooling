@@ -1,0 +1,14 @@
+query GetRecommendationsOnTheFly($input: RecommendationsOnTheFlyInput!) {
+    recommendationsOnTheFly(input: $input) {
+        recommendations {
+          origin {
+            ... LocationFragment
+          }
+          user{
+            id
+            avatarUrl
+            firstname
+          }
+        }
+    }
+}

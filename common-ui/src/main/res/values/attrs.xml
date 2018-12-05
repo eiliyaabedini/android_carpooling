@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomTextInputLayout">
+        <attr name="text_input_hint" format="reference" />
+        <attr name="text_input_hint_below" format="reference" />
+        <attr name="text_input_enable" format="boolean" />
+        <attr name="text_input_input_type" format="enum">
+            <enum name="text" value="1" />
+            <enum name="phoneNumber" value="3" />
+        </attr>
+        <attr name="text_input_drawable_type" format="enum">
+            <enum name="none" value="0" />
+            <enum name="arrow" value="1" />
+            <enum name="lock" value="2" />
+        </attr>
+        <attr name="text_input_max_counter" format="integer" />
+    </declare-styleable>
+</resources>

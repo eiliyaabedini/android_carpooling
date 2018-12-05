@@ -1,0 +1,20 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply from: "$project.rootProject.projectDir/gradle/defaultAndroidLib.gradle"
+
+android {
+    defaultConfig {
+        buildConfigField "String", "CONFIG_DYNAMIC_LINK_PREFIX", "\"https://${project.DeeplinksFirebaseDomainPrefix}\""
+        buildConfigField "String", "CONFIG_WEB_HOST", "\"${project.DeeplinksWebScheme}://${project.DeeplinksWebHost}\""
+        buildConfigField "String", "CONFIG_IOS_BUNDLE_ID", "\"${project.ConfigIOSBundleId}\""
+        buildConfigField "String", "CONFIG_IOS_APP_STORE_ID", "\"${project.ConfigIOSAppStoreId}\""
+
+    }
+}
+
+dependencies {
+    implementation project(':common-ui')
+    implementation project(':interfaces')
+
+    testImplementation "com.deftmove.heart:heart-test-helpers:$HEART_VERSION"
+}

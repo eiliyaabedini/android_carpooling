@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.deftmove.onboarding">
+
+    <application>
+        <activity
+            android:name=".OnBoardingActivity"
+            android:label=""
+            android:theme="@style/AppTheme.WithActionBarCloseButton"
+            android:windowSoftInputMode="adjustResize" />
+    </application>
+
+</manifest>

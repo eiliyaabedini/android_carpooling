@@ -1,0 +1,5 @@
+mutation getMagicTokenMutation($input: MagicTokenInput!) {
+    getMagicToken(input: $input) {
+        magicToken
+    }
+}

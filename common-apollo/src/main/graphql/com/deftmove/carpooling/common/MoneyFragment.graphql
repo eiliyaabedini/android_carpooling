@@ -1,0 +1,6 @@
+fragment MoneyFragment on Money {
+    amount
+    amountCents
+    currency
+    currencySymbol
+}

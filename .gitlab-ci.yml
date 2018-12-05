@@ -1,0 +1,38 @@
+#https://github.com/jangrewe/gitlab-ci-android
+image: jangrewe/gitlab-ci-android
+
+#https://medium.com/@NickKaramoff/gitlab-ci-setup-for-an-android-app-3ba57b369b5f
+variables:
+  ANDROID_COMPILE_SDK: "28"
+  APP_NAME: "MainCarpooling"
+
+cache:
+  key: ${CI_PROJECT_ID}
+  paths:
+    - .m2/
+    - .gradle/
+
+#stages:
+#  - test
+#  - build
+
+before_script:
+  - export GRADLE_USER_HOME=$(pwd)/.gradle
+  - chmod +x ./gradlew
+  - apt-get update -y && apt-get install wget -y
+
+test:
+  script:
+    - ./gradlew detekt testDebugUnitTest runTestsInCI '-PCI=true'
+  only:
+    - merge_requests
+
+#deploy:
+#  stage: deploy
+#  script: ./deploy
+#  only:
+#    - master
+
+#build:
+#  script:
+#    - ./gradlew assemble

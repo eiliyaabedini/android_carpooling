@@ -1,0 +1,7 @@
+query RidesFeedQuery($input: RidesFeedInput!) {
+    ridesFeed(input: $input) {
+        rides {
+            ... RideForFeedFragment
+        }
+    }
+}

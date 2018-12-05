@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <FrameLayout
+        android:id="@+id/ride_details_google_map_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/ride_details_horizontal_list"
+        android:layout_width="match_parent"
+        android:layout_height="152dp"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="80dp"
+        android:clipToPadding="false"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ride_details_close_icon"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_margin="16dp"
+        android:background="@drawable/ic_close_black_with_circle_background"
+        android:elevation="4dp"
+        android:padding="16dp" />
+
+    <!-- Adding any other scroll view, with BottomSheetBehavior -->
+    <LinearLayout
+        android:id="@+id/ride_details_bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/lightestGrey"
+        android:elevation="4dp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:behavior_hideable="false"
+        app:behavior_peekHeight="64dp"
+        app:layout_behavior="com.deftmove.heart.common.ui.ui.BottomSheetBehaviorWithHalfExpansion"
+        tools:visibility="visible">
+
+        <TextView
+            android:id="@+id/ride_details_bottom_peek_header_text"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:background="#40FFFFFF"
+            android:gravity="center_vertical"
+            android:padding="16dp"
+            android:textAppearance="@style/AppTextAppearance.Title.Black"
+            tools:text="fdsfdsfsdfdsf" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/ride_details_bottom_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical" />
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

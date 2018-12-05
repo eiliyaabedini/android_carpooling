@@ -1,0 +1,27 @@
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingStart="4dp"
+    android:paddingEnd="4dp"
+    android:paddingBottom="4dp">
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/match_maker_spinner_user"
+        style="@android:style/Widget.Holo.Light.Spinner"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:padding="8dp" />
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/match_maker_spinner_status"
+        style="@android:style/Widget.Holo.Light.Spinner"
+        android:layout_width="140dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="4dp"
+        android:background="@color/white"
+        android:padding="8dp" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

@@ -1,0 +1,7 @@
+query FindRideDetailsQuery($input: FindRideInput!) {
+    findRide(input: $input) {
+        ride {
+            ... RideForDetailsFragment
+        }
+    }
+}

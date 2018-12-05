@@ -1,0 +1,204 @@
+<resources>
+    <string name="common_optional">Optional</string>
+
+    <string name="common_cancel_ride">Cancel ride</string>
+
+    <string name="common_got_it">Got it</string>
+    <string name="common_edit">Edit</string>
+    <string name="common_save">Save</string>
+    <string name="common_contact">Contact</string>
+
+    <string name="common_not_provided">Not provided</string>
+
+    <string name="common_error_message">Something went wrong. Please try again later</string>
+    <string name="common_continue">Continue</string>
+    <string name="common_from">From</string>
+    <string name="common_to">To</string>
+    <string name="common_waypoint">Waypoint</string>
+    <string name="common_send_sms">Send SMS</string>
+    <string name="common_call">Call</string>
+
+    <string name="licence_description">licence text here</string>
+
+    <string name="loading_dialog_error_message">Something went wrong</string>
+    <string name="loading_dialog_error">Please try again!</string>
+    <string name="loading_dialog_loading">Processing</string>
+    <string name="loading_dialog_success">Success!</string>
+
+    <string name="register_hint_username">Enter your username here…</string>
+    <string name="register_hint_password">Enter your password here…</string>
+    <string name="register_button">SignUp</string>
+
+    <string name="register_email_address_hint">Email address</string>
+    <string name="register_next_button_text">Next</string>
+    <string name="register_screen_decription">Hello, please enter your email to get started</string>
+
+
+    <string name="activity_onboarding_title">Last step. Please tell us a bit more about yourself.</string>
+    <string name="activity_onboarding_firstname_hint">First name</string>
+    <string name="activity_onboarding_lastname_hint">Last name</string>
+    <string name="activity_onboarding_gender_hint">Gender</string>
+    <string name="activity_onboarding_phonenumbder_hint">Phone number</string>
+    <string name="activity_first_name_required_error">First name is required</string>
+    <string name="activity_last_name_required_error">Last name is required</string>
+    <string name="activity_gender_required_error">Gender is required</string>
+    <string name="activity_phone_number_required_error">Phone number is required</string>
+
+    <string name="activity_profile_uncompleted_title">Add more details to increase your chances to find a carpool</string>
+    <string name="activity_profile_uncompleted_button">Complete profile</string>
+    <string name="activity_profile_rides_as_passenger_title">rides as a passenger</string>
+    <string name="activity_profile_rides_as_driver_title">rides as a driver</string>
+    <string name="activity_profile_short_bio_title">Short bio</string>
+    <string name="activity_profile_phone_title">Phone</string>
+    <string name="activity_profile_gender_title">Gender</string>
+    <string name="activity_profile_car_details_title">Car Details</string>
+    <string name="activity_profile_car_model_title">Model</string>
+    <string name="activity_profile_car_number_plate_title">Number plate</string>
+    <string name="activity_profile_only_visible_to_you">Only visible to you</string>
+    <string name="activity_profile_email_title">Email</string>
+    <string name="activity_profile_logout_button">Log out</string>
+
+    <string name="activity_profile_edit_title">Edit profile</string>
+    <string name="activity_profile_edit_firstname_hint">First name</string>
+    <string name="activity_profile_edit_lastname_hint">Last name</string>
+    <string name="activity_profile_edit_short_bio_hint">Short bio</string>
+    <string name="activity_profile_edit_gender_hint">Gender</string>
+    <string name="activity_profile_edit_phonenumbder_hint">Phone number</string>
+    <string name="activity_profile_edit_car_model_hint">Model</string>
+    <string name="activity_profile_edit_car_number_plate_hint">Number plate</string>
+    <string name="activity_profile_edit_email_hint">jane.jones@gmail.com</string>
+    <string name="activity_profile_edit_car_details">Car Details</string>
+    <string name="activity_profile_edit_car_model_hint_below">i.e \'Ford Fiesta\', Black</string>
+    <string name="activity_profile_edit_car_number_plate_hint_below">Your number plate will be shown only to people who have a confirmed carpool with you</string>
+    <string name="activity_profile_edit_email_hint_below">Your email cannot be changed at this time</string>
+
+    <string name="activity_create_ride_passenger_title">Find a ride</string>
+    <string name="activity_create_ride_driver_title">Offer a ride</string>
+    <string name="activity_edit_ride_driver_title">Edit a ride</string>
+    <string name="activity_create_ride_time_title">When are you travelling?</string>
+    <string name="activity_create_ride_time_day">Day</string>
+    <string name="activity_create_ride_time_time">Time</string>
+    <string name="activity_create_ride_address_hint">Enter full address</string>
+    <string name="activity_create_ride_repeating_title">Repeat ride</string>
+
+    <string name="activity_create_ride_review_title">Review ride</string>
+    <string name="activity_create_ride_review_date">When</string>
+    <string name="activity_create_ride_review_route">Route:</string>
+    <string name="activity_create_ride_review_car_details_title">Car Details</string>
+    <string name="activity_create_ride_review_car_model_title">Model</string>
+    <string name="activity_create_ride_review_car_number_plate_title">Number plate</string>
+    <string name="activity_create_ride_review_create_button">Offer a ride</string>
+    <string name="activity_create_ride_review_save_button">Save ride</string>
+    <string name="activity_create_ride_review_days_every">Repeats every %s</string>
+
+    <plurals name="activity_ride_feed_item_driver_recommendation_count">
+        <item quantity="one">%d available passenger</item>
+        <item quantity="other">%d available passengers</item>
+    </plurals>
+    <plurals name="activity_ride_feed_item_passenger_recommendation_count">
+        <item quantity="one">%d available driver</item>
+        <item quantity="other">%d available drivers</item>
+    </plurals>
+    <plurals name="activity_ride_feed_item_confirmed_driver_count">
+        <item quantity="one">%d confirmed driver</item>
+        <item quantity="other">%d confirmed drivers</item>
+    </plurals>
+    <plurals name="activity_ride_feed_item_confirmed_passenger_count">
+        <item quantity="one">%d confirmed passenger</item>
+        <item quantity="other">%d confirmed passengers</item>
+    </plurals>
+    <string name="activity_ride_feed_item_requests_and_offers_count">%d pending requests/offers</string>
+    <string name="activity_ride_feed_item_text_description_with_pending">so far</string>
+    <string name="activity_ride_feed_item_text_description_without_pending">in total</string>
+    <string name="activity_ride_feed_item_base_price">%s/km</string>
+    <string name="activity_ride_feed_item_role_text_passenger">I’m a passenger</string>
+    <string name="activity_ride_feed_item_role_text_driver">I’m the driver</string>
+    <string name="activity_ride_feed_item_price_description_driver">The price will be calculated when you find passengers</string>
+    <string name="activity_ride_feed_item_price_description_passenger">The price will be calculated when you find a driver</string>
+    <string name="activity_ride_feed_empty_name">Hi %s</string>
+    <string name="activity_ride_feed_empty_description">You don’t have any upcoming rides</string>
+
+    <plurals name="activity_ride_feed_item_requests_count">
+        <item quantity="one">%d pending request</item>
+        <item quantity="other">%d pending requests</item>
+    </plurals>
+
+    <plurals name="activity_ride_feed_item_offers_count">
+        <item quantity="one">%d pending offer</item>
+        <item quantity="other">%d pending offers</item>
+    </plurals>
+    <string name="activity_ride_feed_item_menu_repeat_edit_this">Edit only this ride</string>
+    <string name="activity_ride_feed_item_menu_repeat_edit_all">Edit all repeating rides</string>
+    <string name="activity_ride_feed_item_menu_repeat_cancel_this">Cancel only this ride</string>
+    <string name="activity_ride_feed_item_menu_repeat_cancel_all">Cancel all repeating rides</string>
+
+    <string name="ride_details_passenger_recommended_description">Pickup at %s</string>
+    <string name="ride_details_passenger_requested_description">Pickup at %s</string>
+    <string name="ride_details_passenger_offered_description">has offered a ride</string>
+    <string name="ride_details_passenger_confirmed_description">Pickup at %s</string>
+
+    <string name="ride_details_driver_recommended_description">Pickup at %s</string>
+    <string name="ride_details_driver_offered_description">Pickup at %s</string>
+    <string name="ride_details_driver_requested_description">has requested a ride</string>
+    <string name="ride_details_driver_confirmed_description">Pickup at %s</string>
+
+    <string name="ride_details_passenger_recommended_primary_button">Request a ride</string>
+    <string name="ride_details_passenger_requested_primary_button">Requested</string>
+    <string name="ride_details_passenger_requested_secondary_button">Cancel</string>
+    <string name="ride_details_passenger_offered_primary_button">Accept</string>
+    <string name="ride_details_passenger_offered_secondary_button">Decline</string>
+    <string name="ride_details_passenger_confirmed_primary_button">Confirmed</string>
+    <string name="ride_details_passenger_confirmed_secondary_button">Contact</string>
+
+    <string name="ride_details_driver_recommended_primary_button">Offer a ride</string>
+    <string name="ride_details_driver_offered_primary_button">Offered</string>
+    <string name="ride_details_driver_offered_secondary_button">Cancel</string>
+    <string name="ride_details_driver_requested_primary_button">Accept</string>
+    <string name="ride_details_driver_requested_secondary_button">Decline</string>
+    <string name="ride_details_driver_confirmed_primary_button">Confirmed</string>
+    <string name="ride_details_driver_confirmed_secondary_button">Contact</string>
+
+    <string name="ride_details_driver_empty_with_count_text">No additional passengers are available. Please try again later.</string>
+    <string name="ride_details_driver_empty_without_count_text">No passengers are available at the moment. Please try again later.</string>
+    <string name="ride_details_passenger_empty_text">No drivers are available at the moment. Please try again later.</string>
+
+    <plurals name="ride_details_driver_bottom_sheet_header">
+        <item quantity="one">%d confirmed passenger</item>
+        <item quantity="other">%d confirmed passengers</item>
+    </plurals>
+
+    <string name="home_screen_find_ride_button">Find a ride</string>
+    <string name="home_screen_offer_ride_button">Offer a ride</string>
+    <string name="home_screen_inf_bottom_sheet_title">Price information</string>
+    <string name="home_screen_inf_bottom_sheet_description">The price is fixed per km and it\'s the same for everyone. Passengers pay the exact distance they travel.</string>
+    <string name="home_screen_inf_bottom_sheet_button">Got it</string>
+
+    <string name="notifications_screen_title">Notifications</string>
+
+
+    <string name="way_points_screen_title">Edit route</string>
+    <string name="way_points_screen_add_waypoints">Add waypoints</string>
+    <string name="way_points_screen_add_points_button">+ ADD POINT</string>
+    <string name="way_points_screen_description">Customising your route will help us find you more passengers</string>
+    <string name="way_points_screen_action_button">Review ride</string>
+    <string name="way_points_screen_recommendation_add">Add as a waypoint</string>
+    <string name="way_points_screen_recommendation_visit_profile">View profile</string>
+    <string name="way_points_screen_added_recommendation_delete">Delete waypoint</string>
+    <string name="way_points_screen_waypoint_delete">Delete waypoint</string>
+    <string name="way_points_screen_waypoint_edit">Edit address</string>
+
+    <string name="address_search_screen_current_location">Current location</string>
+
+    <string name="repeating_screen_title">Repeat ride</string>
+    <string name="repeating_screen_headline">Repeat every:</string>
+    <string name="repeating_screen_day_monday">Monday</string>
+    <string name="repeating_screen_day_tuesday">Tuesday</string>
+    <string name="repeating_screen_day_wednesday">Wednesday</string>
+    <string name="repeating_screen_day_thursday">Thursday</string>
+    <string name="repeating_screen_day_friday">Friday</string>
+    <string name="repeating_screen_day_saturday">Saturday</string>
+    <string name="repeating_screen_day_sunday">Sunday</string>
+    <string name="repeating_screen_explanation">The ride will keep repeating every week until you cancel it.\nYou can change your selected days at any time.</string>
+    <string name="repeating_screen_action_button">Done</string>
+
+</resources>

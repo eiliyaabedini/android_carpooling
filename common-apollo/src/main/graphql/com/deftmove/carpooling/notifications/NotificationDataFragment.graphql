@@ -1,0 +1,4 @@
+fragment NotificationDataFragment on NotificationData {
+    key
+    value
+}

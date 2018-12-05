@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ride_feed_renderer_parent"
+    style="@style/Widget.MaterialComponents.CardView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="4dp"
+    android:layout_marginEnd="4dp"
+    android:layout_marginBottom="8dp"
+    android:foreground="?attr/selectableItemBackground"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/ride_feed_item_google_map_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/ride_feed_item_date"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/ride_feed_item_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="8dp"
+            android:textAppearance="@style/AppTextAppearance.Title.Black"
+            app:layout_constraintBottom_toTopOf="@+id/ride_feed_item_route_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Today at 08:00" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ride_feed_item_repeating_icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:tint="@color/darkGrey"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/ride_feed_item_date"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/ride_feed_item_date"
+            app:srcCompat="@drawable/ic_repeat_black_24dp"
+            tools:visibility="visible" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ride_feed_item_route_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/ride_feed_item_status_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.deftmove.carpooling.commonui.ui.RoutePathView
+                android:id="@+id/ride_feed_item_route_path"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                app:layout_constraintBottom_toBottomOf="@+id/ride_feed_item_route_destination"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/ride_feed_item_route_origin" />
+
+            <TextView
+                android:id="@+id/ride_feed_item_route_origin"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="16dp"
+                android:ellipsize="end"
+                android:lines="1"
+                android:paddingTop="8dp"
+                android:textAppearance="@style/AppTextAppearance.Body.Black"
+                app:layout_constraintBottom_toTopOf="@+id/ride_feed_item_route_destination"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ride_feed_item_route_path"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Ace Hotel And Some More Text dsgfjhsgdfjhsvjhfvd,bs vsmbffbsdmnf " />
+
+            <TextView
+                android:id="@+id/ride_feed_item_route_destination"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:ellipsize="end"
+                android:lines="1"
+                android:paddingBottom="8dp"
+                android:textAppearance="@style/AppTextAppearance.Body.Black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ride_feed_item_route_path"
+                app:layout_constraintTop_toBottomOf="@+id/ride_feed_item_route_origin"
+                tools:text="Night Jar" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ride_feed_item_status_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/ride_feed_item_money_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ride_feed_item_states_icon"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/rounded_primary_background"
+                android:padding="4dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_car_white_24dp" />
+
+            <LinearLayout
+                android:id="@+id/ride_feed_item_states_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="8dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="@+id/ride_feed_item_states_icon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ride_feed_item_states_icon"
+                app:layout_constraintTop_toTopOf="@+id/ride_feed_item_states_icon">
+
+                <TextView
+                    android:id="@+id/ride_feed_item_states_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:textAppearance="@style/AppTextAppearance.Body.Blue"
+                    tools:text="20 available passengers" />
+
+                <TextView
+                    android:id="@+id/ride_feed_item_states_warning"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:textAppearance="@style/AppTextAppearance.Body.Warning"
+                    tools:text="2 pending requests" />
+
+                <TextView
+                    android:id="@+id/ride_feed_item_states_success"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:textAppearance="@style/AppTextAppearance.Body.Success"
+                    tools:text="1 confirmed passenger" />
+
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/ride_feed_item_states_passenger_confirm_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/ride_feed_item_states_icon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ride_feed_item_states_icon"
+                app:layout_constraintTop_toTopOf="@+id/ride_feed_item_states_icon">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ride_feed_item_states_passenger_confirm_driver_avatar"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/ride_feed_item_states_passenger_confirm_driver_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:textAppearance="@style/AppTextAppearance.Body.Black"
+                    app:layout_constraintStart_toEndOf="@+id/ride_feed_item_states_passenger_confirm_driver_avatar"
+                    app:layout_constraintTop_toTopOf="@+id/ride_feed_item_states_passenger_confirm_driver_avatar"
+                    tools:text="Farhad Sanaei seresht" />
+
+                <TextView
+                    android:id="@+id/ride_feed_item_states_passenger_confirm_driver_license_plate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:textAppearance="@style/AppTextAppearance.Subhead.DGrey"
+                    app:layout_constraintEnd_toStartOf="@+id/ride_feed_item_states_passenger_confirm_driver_contact"
+                    app:layout_constraintStart_toEndOf="@+id/ride_feed_item_states_passenger_confirm_driver_avatar"
+                    app:layout_constraintTop_toBottomOf="@+id/ride_feed_item_states_passenger_confirm_driver_name"
+                    tools:text="HH 556KDF" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/ride_feed_item_states_passenger_confirm_driver_contact"
+                    style="@style/AppTheme.ButtonTextPrimary"
+                    android:layout_width="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/common_contact"
+                    app:layout_constraintBottom_toBottomOf="@+id/ride_feed_item_states_passenger_confirm_driver_license_plate"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/ride_feed_item_states_passenger_confirm_driver_license_plate" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ride_feed_item_money_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:layout_constraintBottom_toTopOf="@+id/ride_feed_item_bottom_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ride_feed_item_money_icon"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/rounded_primary_background"
+                android:padding="4dp"
+                android:tint="@color/white"
+                app:layout_constraintBottom_toTopOf="@+id/ride_feed_item_money_price_empty_description_text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_money_24_black" />
+
+            <TextView
+                android:id="@+id/ride_feed_item_money_amount_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:ellipsize="end"
+                android:lines="1"
+                android:textAppearance="@style/AppTextAppearance.Body.Black"
+                app:layout_constraintBottom_toBottomOf="@+id/ride_feed_item_money_icon"
+                app:layout_constraintStart_toEndOf="@+id/ride_feed_item_money_icon"
+                app:layout_constraintTop_toTopOf="@+id/ride_feed_item_money_icon"
+                tools:text="€4.50" />
+
+            <TextView
+                android:id="@+id/ride_feed_item_money_amount_text_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:ellipsize="end"
+                android:lines="1"
+                android:textAppearance="@style/AppTextAppearance.Footnote.DGrey"
+                app:layout_constraintBottom_toBottomOf="@+id/ride_feed_item_money_icon"
+                app:layout_constraintStart_toEndOf="@+id/ride_feed_item_money_amount_text"
+                app:layout_constraintTop_toTopOf="@+id/ride_feed_item_money_icon"
+                tools:text="so far" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ride_feed_item_money_amount_description_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/ride_feed_item_money_icon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/ride_feed_item_money_icon"
+                app:srcCompat="@drawable/ic_info_black_24dp" />
+
+            <TextView
+                android:id="@+id/ride_feed_item_money_rate_price_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:ellipsize="end"
+                android:lines="1"
+                android:textAppearance="@style/AppTextAppearance.Footnote.DGrey"
+                app:layout_constraintBottom_toBottomOf="@+id/ride_feed_item_money_icon"
+                app:layout_constraintEnd_toStartOf="@+id/ride_feed_item_money_amount_description_icon"
+                app:layout_constraintTop_toTopOf="@+id/ride_feed_item_money_icon"
+                tools:text="€0.50/km" />
+
+            <TextView
+                android:id="@+id/ride_feed_item_money_price_empty_description_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textAppearance="@style/AppTextAppearance.Footnote.DGrey"
+                app:layout_constraintEnd_toStartOf="@+id/ride_feed_item_money_amount_description_icon"
+                app:layout_constraintStart_toStartOf="@+id/ride_feed_item_money_amount_text"
+                app:layout_constraintTop_toBottomOf="@+id/ride_feed_item_money_amount_text"
+                tools:text="@string/activity_ride_feed_item_price_description_driver" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/ride_feed_item_bottom_layout"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:background="@color/lightestGrey"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/ride_feed_item_role_bottom"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:lines="1"
+                android:textAppearance="@style/AppTextAppearance.Footnote.Black"
+                tools:text="@string/activity_ride_feed_item_role_text_driver" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ride_feed_item_edit_bottom"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="8dp"
+                android:background="?attr/selectableItemBackground"
+                android:padding="8dp"
+                android:tint="@color/black"
+                app:srcCompat="@drawable/ic_more_vert_black_24dp" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

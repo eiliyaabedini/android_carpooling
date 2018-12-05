@@ -1,0 +1,7 @@
+mutation CreateRideMutation($input: CreateRideInput!) {
+    createRide(input: $input) {
+        ride {
+            ... RideForFeedFragment
+        }
+    }
+}

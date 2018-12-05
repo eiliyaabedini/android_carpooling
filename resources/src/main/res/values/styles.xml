@@ -1,0 +1,17 @@
+<resources>
+    <!-- TextInputLayout -->
+    <style name="TextInputLayoutErrorText" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/error</item>
+    </style>
+
+    <style name="TextInputLayoutHintText" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/darkGrey</item>
+    </style>
+
+    <style name="TextInputLayoutAppearance" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="hintTextAppearance">@style/TextInputLayoutHintText</item>
+        <item name="errorTextAppearance">@style/TextInputLayoutErrorText</item>
+        <item name="boxBackgroundColor">@color/white</item>
+        <item name="boxStrokeColor">@color/darkGrey</item>
+    </style>
+</resources>

@@ -1,0 +1,18 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.deftmove.debugtools">
+
+    <application>
+
+        <activity
+            android:name=".matchmaker.MatchMakerActivity"
+            android:label="Awesome Ride mocker"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".accountswitch.AccountSwitcherActivity"
+            android:label="Awesome Account switcher"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+    </application>
+
+</manifest>

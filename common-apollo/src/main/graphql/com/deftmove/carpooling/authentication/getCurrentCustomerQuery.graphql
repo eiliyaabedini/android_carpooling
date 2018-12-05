@@ -1,0 +1,11 @@
+query getCurrentCustomerQuery {
+    currentCustomer {
+         customer {
+            currencyIsoCode
+            farePerKm {
+                ... MoneyFragment
+            }
+            name
+         }
+    }
+}

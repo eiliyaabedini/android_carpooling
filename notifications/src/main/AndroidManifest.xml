@@ -1,0 +1,12 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.deftmove.notifications">
+
+    <application>
+        <activity
+            android:name=".NotificationsActivity"
+            android:label="@string/notifications_screen_title"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.WithWhiteActionBar" />
+    </application>
+
+</manifest>

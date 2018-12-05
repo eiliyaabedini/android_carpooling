@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/profile_edit_scrollview_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="48dp"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@+id/profile_edit_avatar_image_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginEnd="20dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/profile_edit_avatar_image"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    android:src="@color/primary"
+                    app:srcCompat="@drawable/default_avatar_placeholder" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/profile_edit_avatar_image_icon"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center"
+                    android:elevation="16dp"
+                    android:outlineProvider="paddedBounds"
+                    app:srcCompat="@drawable/ic_photo_camera_white_24dp" />
+
+                <ProgressBar
+                    android:id="@+id/profile_edit_avatar_image_progress"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center"
+                    android:elevation="16dp"
+                    android:outlineProvider="paddedBounds"
+                    android:visibility="gone" />
+
+            </FrameLayout>
+
+            <com.deftmove.carpooling.commonui.ui.CustomTextInputLayout
+                android:id="@+id/profile_edit_firstname_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="20dp"
+                app:text_input_hint="@string/activity_profile_edit_firstname_hint" />
+
+            <com.deftmove.carpooling.commonui.ui.CustomTextInputLayout
+                android:id="@+id/profile_edit_lastname_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="20dp"
+                app:text_input_hint="@string/activity_profile_edit_lastname_hint" />
+
+            <com.deftmove.carpooling.commonui.ui.CustomTextInputLayout
+                android:id="@+id/profile_edit_short_bio_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="20dp"
+                app:text_input_hint="@string/activity_profile_edit_short_bio_hint"
+                app:text_input_max_counter="250" />
+
+            <com.deftmove.carpooling.commonui.ui.CustomTextInputLayout
+                android:id="@+id/profile_edit_phone_number_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="20dp"
+                app:text_input_hint="@string/activity_profile_edit_phonenumbder_hint"
+                app:text_input_input_type="phoneNumber" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp">
+
+                <com.deftmove.carpooling.commonui.ui.CustomTextInputLayout
+                    android:id="@+id/profile_edit_gender_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:text_input_hint="@string/activity_profile_edit_gender_hint" />
+
+                <View
+                    android:id="@+id/profile_edit_gender_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </FrameLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="24dp"
+                android:background="@color/midGrey" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="28dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:background="@drawable/rounded_primary_background"
+                    android:padding="4dp"
+                    app:srcCompat="@drawable/ic_car_white_24dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/activity_profile_edit_car_details" />
+
+            </LinearLayout>
+
+            <com.deftmove.carpooling.commonui.ui.CustomTextInputLayout
+                android:id="@+id/profile_edit_car_model_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="20dp"
+                app:text_input_hint="@string/activity_profile_edit_car_model_hint"
+                app:text_input_hint_below="@string/activity_profile_edit_car_model_hint_below" />
+
+            <com.deftmove.carpooling.commonui.ui.CustomTextInputLayout
+                android:id="@+id/profile_edit_car_number_plate_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="20dp"
+                app:text_input_hint="@string/activity_profile_edit_car_number_plate_hint"
+                app:text_input_hint_below="@string/activity_profile_edit_car_number_plate_hint_below" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="24dp"
+                android:background="@color/midGrey" />
+
+            <com.deftmove.carpooling.commonui.ui.CustomTextInputLayout
+                android:id="@+id/profile_edit_email_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="20dp"
+                app:text_input_drawable_type="lock"
+                app:text_input_enable="false"
+                app:text_input_hint="@string/activity_profile_edit_email_hint"
+                app:text_input_hint_below="@string/activity_profile_edit_email_hint_below" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <View
+        android:id="@+id/profile_edit_save_loading_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white80"
+        android:visibility="gone" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

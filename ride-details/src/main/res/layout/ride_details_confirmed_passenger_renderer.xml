@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/transparent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ride_details_confirmed_passenger_renderer_avatar"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/ride_details_confirmed_passenger_renderer_user_name"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:textAppearance="@style/AppTextAppearance.Body.Black"
+        app:layout_constraintBottom_toBottomOf="@+id/ride_details_confirmed_passenger_renderer_avatar"
+        app:layout_constraintEnd_toStartOf="@+id/ride_details_confirmed_passenger_renderer_time"
+        app:layout_constraintStart_toEndOf="@+id/ride_details_confirmed_passenger_renderer_avatar"
+        app:layout_constraintTop_toTopOf="@+id/ride_details_confirmed_passenger_renderer_avatar"
+        tools:text="Mark Powell" />
+
+    <TextView
+        android:id="@+id/ride_details_confirmed_passenger_renderer_time"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="8dp"
+        android:textAppearance="@style/AppTextAppearance.Body.Black"
+        app:layout_constraintBottom_toBottomOf="@+id/ride_details_confirmed_passenger_renderer_avatar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ride_details_confirmed_passenger_renderer_user_name"
+        app:layout_constraintTop_toTopOf="@+id/ride_details_confirmed_passenger_renderer_avatar"
+        tools:text="18h" />
+
+    <TextView
+        android:id="@+id/ride_details_confirmed_passenger_renderer_pickup"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/AppTextAppearance.Subhead.Grey"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ride_details_confirmed_passenger_renderer_contact"
+        app:layout_constraintStart_toStartOf="@+id/ride_details_confirmed_passenger_renderer_user_name"
+        app:layout_constraintTop_toBottomOf="@+id/ride_details_confirmed_passenger_renderer_user_name"
+        tools:text="Street address san francisco USA 22568 Hamburg Germany" />
+
+    <com.deftmove.heart.common.ui.ui.LoadingButton
+        android:id="@+id/ride_details_confirmed_passenger_renderer_contact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ride_details_confirmed_passenger_renderer_pickup"
+        app:layout_constraintEnd_toEndOf="@+id/ride_details_confirmed_passenger_renderer_time"
+        app:layout_constraintStart_toEndOf="@+id/ride_details_confirmed_passenger_renderer_pickup"
+        app:layout_constraintTop_toTopOf="@+id/ride_details_confirmed_passenger_renderer_pickup"
+        tools:background="@color/grey"
+        tools:minHeight="32dp"
+        tools:visibility="visible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

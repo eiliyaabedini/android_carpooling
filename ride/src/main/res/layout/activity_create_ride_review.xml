@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/create_ride_review_scrollview_root"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintBottom_toTopOf="@+id/create_ride_review_layout_button"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="16dp">
+
+            <FrameLayout
+                android:id="@+id/create_ride_review_google_map_fragment"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/create_ride_review_date_title_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/activity_create_ride_review_date"
+                android:textAppearance="@style/AppTextAppearance.Body.Black"
+                app:layout_constraintEnd_toStartOf="@+id/create_ride_review_date_text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/create_ride_review_google_map_fragment" />
+
+            <TextView
+                android:id="@+id/create_ride_review_date_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="20dp"
+                android:gravity="end"
+                android:textAppearance="@style/AppTextAppearance.Body.Black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/create_ride_review_date_title_text"
+                app:layout_constraintTop_toBottomOf="@+id/create_ride_review_google_map_fragment"
+                tools:text="Today, 10 Jan 2019" />
+
+            <TextView
+                android:id="@+id/create_ride_review_repeating_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="20dp"
+                android:drawableStart="@drawable/ic_repeat_black_24dp"
+                android:drawablePadding="8dp"
+                android:gravity="end"
+                android:textAppearance="@style/AppTextAppearance.Subhead.DGrey"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/create_ride_review_date_text"
+                tools:text="Repeats every Mon, Tue, Fri"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/create_ride_review_route_title_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/activity_create_ride_review_route"
+                android:textAppearance="@style/AppTextAppearance.Body.Black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/create_ride_review_repeating_text" />
+
+            <com.deftmove.carpooling.commonui.ui.RoutePathView
+                android:id="@+id/create_ride_review_route_path"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/create_ride_review_route_destination"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/create_ride_review_route_origin" />
+
+            <com.deftmove.ride.review.ReviewPickupItemView
+                android:id="@+id/create_ride_review_route_origin"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/create_ride_review_route_path"
+                app:layout_constraintTop_toBottomOf="@+id/create_ride_review_route_title_text" />
+
+            <LinearLayout
+                android:id="@+id/create_ride_review_routes"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/create_ride_review_route_path"
+                app:layout_constraintTop_toBottomOf="@+id/create_ride_review_route_origin" />
+
+            <com.deftmove.ride.review.ReviewPickupItemView
+                android:id="@+id/create_ride_review_route_destination"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/create_ride_review_route_path"
+                app:layout_constraintTop_toBottomOf="@+id/create_ride_review_routes" />
+
+            <View
+                android:id="@+id/create_ride_review_routes_bottom_divider"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="24dp"
+                android:background="@color/midGrey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/create_ride_review_route_destination" />
+
+            <LinearLayout
+                android:id="@+id/create_ride_review_car_details_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/create_ride_review_routes_bottom_divider">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:background="@drawable/rounded_primary_background"
+                    android:padding="4dp"
+                    app:srcCompat="@drawable/ic_car_white_24dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/activity_create_ride_review_car_details_title"
+                    android:textAppearance="@style/AppTextAppearance.Subhead.Grey" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/create_ride_review_car_details_model"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/create_ride_review_car_details_title">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="12dp"
+                    android:text="@string/activity_create_ride_review_car_model_title"
+                    android:textAppearance="@style/AppTextAppearance.Body.Black" />
+
+                <TextView
+                    android:id="@+id/create_ride_review_car_model_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:hint="@string/common_not_provided"
+                    android:padding="12dp"
+                    android:textAppearance="@style/AppTextAppearance.Body.Grey" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/create_ride_review_car_details_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/create_ride_review_car_details_model">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="12dp"
+                    android:text="@string/activity_create_ride_review_car_number_plate_title"
+                    android:textAppearance="@style/AppTextAppearance.Body.Black" />
+
+                <TextView
+                    android:id="@+id/create_ride_review_car_number_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:hint="@string/common_not_provided"
+                    android:padding="12dp"
+                    android:textAppearance="@style/AppTextAppearance.Body.Grey" />
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:background="@drawable/top_shadow_gradient"
+        app:layout_constraintBottom_toTopOf="@+id/create_ride_review_layout_button" />
+
+    <FrameLayout
+        android:id="@+id/create_ride_review_layout_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/create_ride_review_submit_button"
+            style="@style/AppTheme.ButtonPrimary"
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginStart="36dp"
+            android:layout_marginEnd="36dp"
+            android:text="@string/activity_create_ride_review_create_button" />
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

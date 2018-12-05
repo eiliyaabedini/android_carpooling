@@ -1,0 +1,22 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply from: "$project.rootProject.projectDir/gradle/defaultAndroidLib.gradle"
+
+android {
+    defaultConfig {
+        buildConfigField "String", "CONFIG_CUSTOMER_IDENTIFIER", "\"${project.ConfigCustomerIdentifier}\""
+        buildConfigField "String", "CONFIG_APP_VERSION_NAME", "\"${project.ConfigAppVersionName}\""
+    }
+}
+
+dependencies {
+    implementation "com.deftmove.heart:heart:$HEART_VERSION"
+    implementation project(":common-apollo")
+    implementation project(":interfaces")
+
+    implementation("androidx.core:core-ktx:$CORE_KTX") {
+        exclude group: 'com.google.guava', module: 'listenablefuture'
+    }
+
+    implementation "com.squareup.okhttp3:okhttp:$OKHTTP_VERSION"
+}

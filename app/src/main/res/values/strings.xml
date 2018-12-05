@@ -1,0 +1,5 @@
+<resources>
+    <string name="register_send_email_dialog_title">Check your email\n%s</string>
+    <string name="register_send_email_dialog_description">Click on the special link we just sent to continue</string>
+    <string name="register_send_email_dialog_second_description">Didn’t receive an email?\nPlease check that it’s the right one and try again</string>
+</resources>

@@ -1,0 +1,10 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply from: "$project.rootProject.projectDir/gradle/defaultAndroidLib.gradle"
+
+dependencies {
+    implementation project(':common-ui')
+
+    //https://github.com/wasabeef/glide-transformations
+    implementation 'jp.wasabeef:glide-transformations:4.0.1'
+}

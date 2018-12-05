@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp">
+
+    <ScrollView
+        android:id="@+id/repeating_days_layout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/repeating_explanations"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="@string/repeating_screen_headline"
+                android:textAppearance="@style/AppTextAppearance.Title.Black" />
+
+            <FrameLayout
+                android:id="@+id/repeating_monday_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center_vertical"
+                    android:text="@string/repeating_screen_day_monday"
+                    android:textAppearance="@style/AppTextAppearance.Body.Black" />
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/repeating_monday_checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|center_vertical"
+                    android:buttonTint="@color/primary"
+                    android:clickable="false" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/repeating_tuesday_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center_vertical"
+                    android:text="@string/repeating_screen_day_tuesday"
+                    android:textAppearance="@style/AppTextAppearance.Body.Black" />
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/repeating_tuesday_checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|center_vertical"
+                    android:buttonTint="@color/primary"
+                    android:clickable="false" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/repeating_wednesday_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center_vertical"
+                    android:text="@string/repeating_screen_day_wednesday"
+                    android:textAppearance="@style/AppTextAppearance.Body.Black" />
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/repeating_wednesday_checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|center_vertical"
+                    android:buttonTint="@color/primary"
+                    android:clickable="false" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/repeating_thursday_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center_vertical"
+                    android:text="@string/repeating_screen_day_thursday"
+                    android:textAppearance="@style/AppTextAppearance.Body.Black" />
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/repeating_thursday_checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|center_vertical"
+                    android:buttonTint="@color/primary"
+                    android:clickable="false" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/repeating_friday_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center_vertical"
+                    android:text="@string/repeating_screen_day_friday"
+                    android:textAppearance="@style/AppTextAppearance.Body.Black" />
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/repeating_friday_checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|center_vertical"
+                    android:buttonTint="@color/primary"
+                    android:clickable="false" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/repeating_saturday_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center_vertical"
+                    android:text="@string/repeating_screen_day_saturday"
+                    android:textAppearance="@style/AppTextAppearance.Body.Black" />
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/repeating_saturday_checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|center_vertical"
+                    android:buttonTint="@color/primary"
+                    android:clickable="false" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/repeating_sunday_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center_vertical"
+                    android:text="@string/repeating_screen_day_sunday"
+                    android:textAppearance="@style/AppTextAppearance.Body.Black" />
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/repeating_sunday_checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|center_vertical"
+                    android:buttonTint="@color/primary"
+                    android:clickable="false" />
+
+            </FrameLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/repeating_explanations"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/repeating_action_button">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            app:srcCompat="@drawable/ic_info_black_24dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center_vertical"
+            android:text="@string/repeating_screen_explanation"
+            android:textAppearance="@style/AppTextAppearance.Subhead.DGrey" />
+
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/repeating_action_button"
+        style="@style/AppTheme.ButtonPrimary"
+        android:layout_width="match_parent"
+        android:layout_marginStart="36dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/repeating_screen_action_button"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,13 @@
+<resources>
+    <string name="register_email_address_error">Invalid email address</string>
+
+    <string name="repeating_days_weekend">Weekends</string>
+    <string name="repeating_days_everyday">Every day</string>
+    <string name="repeating_days_every">Every %s</string>
+
+    <string name="activity_profile_member_since">Member since %s</string>
+
+    <string name="notifications_screen_item_time" formatted="false">%1s, %2s</string>
+
+
+</resources>

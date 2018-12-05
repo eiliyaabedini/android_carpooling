@@ -1,0 +1,20 @@
+include ':app', ':chat'
+include ':authentication'
+include ':common-apollo'
+include ':services'
+include ':onboarding'
+include ':home'
+include ':profile'
+include ':splash'
+include ':resources'
+include ':ride'
+include ':ride-details'
+include ':debug-tools'
+include ':notifications'
+include ':repeating'
+include ':common-ui'
+include ':interfaces'
+
+if (file("./plugins/chat/build.gradle").exists()) {
+    project(':chat').projectDir = new File('plugins/chat')
+}

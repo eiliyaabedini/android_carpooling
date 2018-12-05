@@ -1,0 +1,9 @@
+fragment RepeatingRideFragment on RepeatingRide {
+    friday
+    monday
+    saturday
+    sunday
+    thursday
+    tuesday
+    wednesday
+}

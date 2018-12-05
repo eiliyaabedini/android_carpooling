@@ -1,0 +1,8 @@
+mutation loginWithMagicTokenMutation($input: LoginWithMagicTokenInput!) {
+    loginWithMagicToken(input: $input) {
+         apiToken
+         user {
+            ... UserFragment
+         }
+    }
+}

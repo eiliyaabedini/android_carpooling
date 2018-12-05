@@ -1,0 +1,41 @@
+android {
+    compileSdkVersion TARGET_SDK_VERSION
+    buildToolsVersion BUILD_TOOLS_VERSION
+
+    defaultConfig {
+        minSdkVersion MIN_SDK_VERSION
+        targetSdkVersion TARGET_SDK_VERSION
+
+        vectorDrawables.useSupportLibrary = true
+    }
+
+    buildTypes {
+        debug {
+//            minifyEnabled false
+        }
+        release {
+//            minifyEnabled false
+//            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$KOTLIN_VERSION"
+    api "org.jetbrains.kotlin:kotlin-stdlib:$KOTLIN_VERSION"
+    api "org.jetbrains.kotlin:kotlin-reflect:$KOTLIN_VERSION"
+}
+
+repositories {
+    mavenCentral()
+}

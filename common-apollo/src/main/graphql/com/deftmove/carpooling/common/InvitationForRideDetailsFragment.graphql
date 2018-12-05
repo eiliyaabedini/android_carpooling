@@ -1,0 +1,26 @@
+fragment InvitationForRideDetailsFragment on Invitation {
+    id
+    cancelledAt
+    confirmedAt
+    offerId
+    requestId
+    senderId
+    passengerId
+    driverId
+    sharedRoute
+    pickup {
+        ... StopWithTimeFragment
+    }
+    dropoff {
+        ... StopWithTimeFragment
+    }
+    grossPrice {
+        ... MoneyFragment
+    }
+    driver {
+        ... UserFragment
+    }
+    passenger {
+        ... UserFragment
+    }
+}

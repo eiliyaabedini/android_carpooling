@@ -1,0 +1,21 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.deftmove.ride">
+
+    <application>
+        <activity
+            android:name=".create.CreateRideActivity"
+            android:label=""
+            android:theme="@style/AppTheme.WithWhiteActionBar" />
+
+        <activity
+            android:name=".waypoints.WayPointsActivity"
+            android:label="@string/way_points_screen_title"
+            android:theme="@style/AppTheme.WithWhiteActionBar" />
+
+        <activity
+            android:name=".review.CreateRideReviewActivity"
+            android:label="@string/activity_create_ride_review_title"
+            android:theme="@style/AppTheme.WithWhiteActionBar" />
+    </application>
+
+</manifest>

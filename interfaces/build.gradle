@@ -1,0 +1,30 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply from: "$project.rootProject.projectDir/gradle/defaultAndroidLib.gradle"
+
+dependencies {
+    implementation "com.deftmove.heart:heart:$HEART_VERSION"
+
+    api "com.jakewharton.timber:timber:$TIMBER_VERSION"
+
+    api "androidx.annotation:annotation:$SUPPORT_ANNOTATIONS_VERSION"
+
+    //  https://github.com/vivchar/RendererRecyclerViewAdapter
+    api 'com.github.vivchar:RendererRecyclerViewAdapter:2.8.0'
+
+    api "com.google.firebase:firebase-core:$FIREBASE_CORE"
+
+    api "org.koin:koin-android:$KOIN_VERSION"
+//    api "org.koin:koin-core-ext:$KOIN_VERSION"
+    api "org.koin:koin-androidx-scope:$KOIN_VERSION"
+
+    api "io.reactivex.rxjava2:rxjava:$RX_JAVA_VERSION"
+    api "io.reactivex.rxjava2:rxkotlin:$RX_KOTLIN_VERSION"
+    api "io.reactivex.rxjava2:rxandroid:$RX_ANDROID_VERSION"
+
+    api("com.apollographql.apollo:apollo-runtime:$APOLLO_VERSION") {
+        exclude group: 'com.squareup.okhttp3'
+    }
+    api "com.apollographql.apollo:apollo-rx2-support:$APOLLO_VERSION"
+    api "com.apollographql.apollo:apollo-android-support:$APOLLO_VERSION"
+}

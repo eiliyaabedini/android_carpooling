@@ -1,0 +1,24 @@
+fragment RecommendationForRideDetailsFragment on Recommendation {
+    id
+    origin {
+        ... LocationFragment
+    }
+    destination {
+        ... LocationFragment
+    }
+    pickup {
+        ... StopWithTimeFragment
+    }
+    dropoff {
+        ... StopWithTimeFragment
+    }
+    grossPrice {
+        ... MoneyFragment
+    }
+    role
+    sharedRoute
+    time
+    user {
+        ... UserFragment
+    }
+}

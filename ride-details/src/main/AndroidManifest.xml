@@ -1,0 +1,11 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.deftmove.ride.details">
+
+    <application>
+        <activity
+            android:name=".RideDetailsActivity"
+            android:label=""
+            android:theme="@style/AppTheme.NoActionBar" />
+    </application>
+
+</manifest>

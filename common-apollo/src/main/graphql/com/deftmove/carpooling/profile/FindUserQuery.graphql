@@ -1,0 +1,7 @@
+query FindUserQuery($input: FindUserInput!) {
+    findUser(input: $input) {
+        user {
+            ... UserFragment
+        }
+    }
+}

@@ -1,0 +1,156 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'io.fabric'
+
+android {
+    compileSdkVersion TARGET_SDK_VERSION
+    buildToolsVersion BUILD_TOOLS_VERSION
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+    defaultConfig {
+
+        multiDexEnabled true
+        applicationId project.ConfigAppId
+
+        minSdkVersion MIN_SDK_VERSION
+        targetSdkVersion TARGET_SDK_VERSION
+
+        versionCode project.ConfigAppVersionCode
+        versionName project.ConfigAppVersionName
+
+        //Set Scheme and Host for deeplinks
+        manifestPlaceholders = [
+              ConfigGoogleMapApiKey        : project.ConfigGoogleMapApiKey,
+              TextsAppName                 : project.TextsAppName,
+              DeeplinksFirebaseDomainPrefix: project.DeeplinksFirebaseDomainPrefix,
+              DeeplinksWebHost             : project.DeeplinksWebHost,
+              DeeplinksWebScheme           : project.DeeplinksWebScheme,
+              DeeplinksApp                 : project.DeeplinksApp
+        ]
+
+        buildConfigField "String", "CONFIG_Google_Map_API_KEY", "\"${project.ConfigGoogleMapApiKey}\""
+
+        //Add Plugins
+        if (PLUGINS) {
+
+            def registerers = ""
+            PLUGINS.each { entry ->
+                registerers += "com.deftmove.app.chat.${entry.key.capitalize()}ModuleRegisterer.INSTANCE,"
+            }
+            buildConfigField "java.util.List<com.deftmove.carpooling.interfaces.plugin.ModuleRegisterer>",
+                  "PLUGINS_REGISTERER", "java.util.Arrays.asList(${registerers.substring(0, registerers.length() - 1)})"
+        } else {
+            buildConfigField "java.util.List<com.deftmove.carpooling.interfaces.plugin.ModuleRegisterer>",
+                  "PLUGINS_REGISTERER", "new java.util.ArrayList<>()"
+        }
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+        debug {
+            storeFile file('keystore/debug.keystore')
+            keyAlias 'user0'
+            storePassword "1234567890"
+            keyPassword storePassword
+        }
+        release {  //TODO make a real key here
+//            storeFile file('keystore/release.keystore')
+//            keyAlias project.ConfigKeystoreKeyAlias
+//            storePassword project.ConfigKeystorePass
+//            keyPassword project.ConfigKeystoreKeyPass
+            storeFile file('keystore/debug.keystore')
+            keyAlias 'user0'
+            storePassword "1234567890"
+            keyPassword storePassword
+        }
+    }
+
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            signingConfig signingConfigs.debug
+
+            // Only use this flag on builds you don't proguard or upload to beta-by-crashlytics
+            ext.alwaysUpdateBuildId = false
+        }
+        release {
+            shrinkResources false
+
+            minifyEnabled false
+            signingConfig signingConfigs.release
+
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation project(":debug-tools")
+    implementation project(':interfaces')
+    implementation project(':common-ui')
+    implementation project(':common-apollo')
+    implementation project(':services')
+    implementation project(":ride")
+    implementation project(":ride-details")
+    implementation project(':splash')
+    implementation project(":home")
+    implementation project(":authentication")
+    implementation project(":onboarding")
+    implementation project(":profile")
+    implementation project(":notifications")
+    implementation project(":repeating")
+
+    PLUGINS.each { entry ->
+        println "Name: $entry.key path: $entry.value"
+        implementation project(":" + entry.key)
+    }
+
+    implementation "com.deftmove.heart:heart:$HEART_VERSION"
+    implementation "com.deftmove.heart:heart-push-notification:$HEART_VERSION"
+    implementation "com.deftmove.heart:heart-map-tools:$HEART_VERSION"
+    implementation "com.deftmove.heart:heart-map-tools-ui:$HEART_VERSION"
+
+    implementation('com.crashlytics.sdk.android:crashlytics:2.10.1@aar') {
+        transitive = true
+    }
+
+    implementation 'com.github.VictorAlbertos:RxActivityResult:0.5.0-2.x'
+
+    implementation "androidx.multidex:multidex:$MULTIDEX"
+
+    testImplementation "com.google.android.libraries.places:places:$GOOGLE_PLACES"
+    testImplementation "com.deftmove.heart:heart-test-helpers:$HEART_VERSION"
+}
+
+def runningInCI = false
+task(runTestsInCI) {
+    if (project.hasProperty("CI")) {
+        runningInCI = true
+    }
+}
+
+afterEvaluate {
+    android.applicationVariants.all {
+        if (it.name == "debug") {
+
+            if (runningInCI) {
+                //prevent google service check in CI
+                project.tasks.getByName("processDebugGoogleServices").enabled = false
+                project.tasks.getByName("fabricGenerateResourcesDebug").enabled = false
+            }
+
+            project.android.sourceSets."${it.name}".res.srcDirs += "${project.buildDir}/generated/res/google-services/${it.name}/"
+        }
+    }
+}
+
+// This must remain at the bottom of this file until Google work out a better way to do this
+apply plugin: 'com.google.gms.google-services'

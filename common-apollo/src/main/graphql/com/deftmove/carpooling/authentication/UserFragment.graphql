@@ -1,0 +1,15 @@
+fragment UserFragment on User {
+    id
+    email
+    firstname
+    lastname
+    gender
+    avatarUrl
+    aboutMe
+    phoneNumber
+    carLicensePlate
+    carModel
+    memberSince
+    numberOfRidesAsDriver
+    numberOfRidesAsPassenger
+}

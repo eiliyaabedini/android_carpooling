@@ -1,0 +1,9 @@
+fragment StopWithTimeFragment on StopWithTime {
+    location {
+        name
+        address
+        latitude
+        longitude
+    }
+    time
+}

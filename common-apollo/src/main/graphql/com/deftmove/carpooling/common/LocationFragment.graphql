@@ -1,0 +1,6 @@
+fragment LocationFragment on Location {
+    name
+    address
+    latitude
+    longitude
+}

@@ -1,0 +1,5 @@
+mutation putMagicTokenLinkMutation($input: MagicTokenLinkInput!) {
+    putMagicTokenLink(input: $input) {
+        success
+    }
+}

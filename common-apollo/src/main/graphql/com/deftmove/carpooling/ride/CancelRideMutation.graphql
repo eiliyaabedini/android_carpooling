@@ -1,0 +1,7 @@
+mutation CancelRideMutation($input: CancelRideInput!) {
+    cancelRide(input: $input) {
+        ride {
+            id
+        }
+    }
+}

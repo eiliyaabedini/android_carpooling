@@ -1,0 +1,143 @@
+import groovy.json.JsonSlurper
+
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    ext.MIN_SDK_VERSION = 23
+    ext.TARGET_SDK_VERSION = 29
+    ext.BUILD_TOOLS_VERSION = '29.0.2'
+
+    ext.HEART_VERSION = '1.2.2-alpha08'
+    ext.PLUGINS = [:]
+
+//    Add All plugins
+    if (file("./plugins").exists()) {
+        file("./plugins")
+              .eachDir {
+                  def registererPath = it.absolutePath + "/src/main/java/com/deftmove/app/chat/" + it.name.capitalize() + "ModuleRegisterer.kt"
+                  if (file(registererPath).exists()) {
+                      println "${it.name} plugin accepted!"
+                      ext.PLUGINS.put(it.name, registererPath)
+                  } else {
+                      println "${it.name} plugin is not acceptable. It does not contain a ${it.name.capitalize()}ModuleRegisterer.kt"
+                  }
+              }
+    }
+
+    ext.KOTLIN_VERSION = '1.3.71'
+    ext.SUPPORT_ANNOTATIONS_VERSION = '1.1.0'
+    ext.KOIN_VERSION = '2.0.1'
+    ext.TIMBER_VERSION = '4.7.1'
+    ext.APOLLO_VERSION = '1.4.4'
+    ext.RX_ANDROID_VERSION = '2.1.1'
+    ext.RX_JAVA_VERSION = '2.2.19'
+    ext.RX_KOTLIN_VERSION = '2.4.0'
+    ext.OKHTTP_VERSION = '4.3.1'
+    ext.RETROFIT_VERSION = '2.8.1'
+    ext.GSON_VERSION = '2.8.6'
+    ext.APPCOMPAT = '1.2.0-alpha01' // 1.2.0-alpha01 has issue with parsing TextView in RegisterActivity
+    ext.CORE_KTX = '1.2.0'
+    // 1.2.0 has an issue: /common-ui/src/main/java/com/deftmove/carpooling/commonui/ui/BadgedIcon.kt: (37, 23): Cannot inline bytecode built with JVM target 1.8 into bytecode that is being built with JVM target 1.6. Please specify proper '-jvm-target' option
+    ext.CONSTRAINT_LAYOUT = '1.1.3'
+    ext.MULTIDEX = '2.0.1'
+    ext.ANDROID_MATERIAL = '1.2.0-alpha05'
+    ext.ANDROID_WORD_RXJAVA2 = '2.3.4'
+    ext.RX_PAPARAZZO = '0.6.1-2.x'
+    ext.RX_RESULT_ACTIVITY = '0.5.0-2.x'
+    ext.RX_PERMISSIONS = '0.10.2'
+    ext.RXPAPARAZZO = '0.6.1-2.x'
+    ext.RX_BINDING = '3.1.0'
+    ext.UCROP = '2.2.2'
+    ext.GLIDE = '4.11.0'
+    ext.GOOGLE_PLACES = '2.2.0'
+    ext.GOOGLE_LOCATION = '17.0.0'
+    ext.FIREBASE_MESSAGING = '20.1.3'
+    ext.FIREBASE_IID = '20.1.2'
+    ext.FIREBASE_REMOTE_CONFIG = '19.1.3'
+    ext.FIREBASE_DYNAMIC_LINKS = '19.1.0'
+    ext.FIREBASE_CORE = '17.2.3'
+    ext.DETEKT = '1.5.1'
+
+    repositories {
+        google()
+        jcenter()
+
+        maven {
+            url 'https://maven.fabric.io/public'
+        }
+    }
+    dependencies {
+        classpath 'com.google.gms:google-services:4.3.3'
+
+        classpath 'com.android.tools.build:gradle:3.6.2'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$KOTLIN_VERSION"
+
+        classpath 'io.fabric.tools:gradle:1.31.2'
+
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
+
+        classpath "io.gitlab.arturbosch.detekt:detekt-gradle-plugin:$DETEKT"
+    }
+}
+
+plugins {
+    id("io.gitlab.arturbosch.detekt").version("$DETEKT")
+}
+
+allprojects {
+    apply from: "$rootDir/gradle/detekt.gradle"
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url "https://jitpack.io" }
+
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+
+        //Heart lib
+        maven { url 'https://dl.bintray.com/deftmove/heart' }
+    }
+}
+
+configurations.all {
+    exclude group: 'com.google.guava', module: 'listenablefuture'
+    resolutionStrategy {
+        resolutionStrategy.forcedModules = [
+              "io.reactivex.rxjava2:rxjava:$RX_JAVA_VERSION",
+        ]
+        dependencySubstitution {
+            substitute module('androidx.multidex:multidex') with module('androidx.multidex:multidex:2.0.1')
+        }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+task parseJson {
+    def jsonFile = file('./builder_config/builder_config.json')
+    def parsedJson = new JsonSlurper().parseText(jsonFile.text)
+
+    println "parsedJson:" + parsedJson
+
+    parsedJson.eachWithIndex { parentItem, parentIndex ->
+        println "parentItemKey: ${parentItem.key.capitalize()}, parentItemValue: ${parentItem.value}"
+
+        parentItem.value.eachWithIndex { item, index ->
+            println "itemKey: ${parentItem.key.capitalize()}${item.key.capitalize()}, itemValue: ${item.value}"
+            project.ext.set("${parentItem.key.capitalize()}${item.key.capitalize()}", item.value)
+        }
+    }
+
+    println project.ConfigAppId
+}
+
+tasks.whenTaskAdded { task ->
+    if (task.name == 'assembleDebug') { //TODO add assembleRelease here as well
+        task.dependsOn parseJson
+    }
+}

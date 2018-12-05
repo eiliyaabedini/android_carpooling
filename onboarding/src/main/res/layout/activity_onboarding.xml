@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/onboarding_fields_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingStart="20dp"
+            android:paddingTop="32dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_onboarding_title"
+                android:textAppearance="@style/AppTextAppearance.Title.Black" />
+
+            <com.deftmove.carpooling.commonui.ui.CustomTextInputLayout
+                android:id="@+id/onboarding_firstname_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                app:text_input_hint="@string/activity_onboarding_firstname_hint" />
+
+            <com.deftmove.carpooling.commonui.ui.CustomTextInputLayout
+                android:id="@+id/onboarding_lastname_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:text_input_hint="@string/activity_onboarding_lastname_hint" />
+
+            <com.deftmove.carpooling.commonui.ui.CustomTextInputLayout
+                android:id="@+id/onboarding_gender_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:text_input_enable="false"
+                app:text_input_hint="@string/activity_onboarding_gender_hint" />
+
+            <com.deftmove.carpooling.commonui.ui.CustomTextInputLayout
+                android:id="@+id/onboarding_phonenummber_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:text_input_hint="@string/activity_onboarding_phonenumbder_hint"
+                app:text_input_input_type="phoneNumber" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/onboarding_next_fab"
+        style="@style/Widget.MaterialComponents.FloatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="16dp"
+        android:tint="@color/white"
+        app:backgroundTint="@color/primary"
+        app:srcCompat="@drawable/ic_arrow_next_white" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

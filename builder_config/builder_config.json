@@ -1,0 +1,26 @@
+{
+  "config": {
+    "appId": "main.mobility",
+    "appVersionCode": 2,
+    "appVersionName": "1.0.0-alpha1",
+    "keystoreKeyAlias": "<VALUE>",
+    "keystorePass": "<VALUE>",
+    "keystoreKeyPass": "<VALUE>",
+    "iOSBundleId": "<Your iOS App Bundle here>",
+    "iOSAppStoreId": "<Your iOS App Store ID here>",
+    "googleMapApiKey": "<Add Google Map Api Key>",
+    "customerIdentifier": "<Generate a customer ID in deftmove.com and insert it here>",
+    "hasPayment": true
+  },
+  "deeplinks": {
+    "firebaseDomainPrefix": "maincarpooling.page.link",
+    "webHost": "maincarpooling.com",
+    "webScheme": "https",
+    "app": "maincarpooling"
+  },
+  "colors": {
+  },
+  "texts": {
+    "appName": "Mobility Experiment"
+  }
+}

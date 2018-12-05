@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.deftmove.profile.profile.ProfileActivity">
+
+    <item
+        android:id="@+id/ride_renderer_action_edit_current_ride"
+        android:title="@string/activity_ride_feed_item_menu_repeat_edit_this" />
+
+    <item
+        android:id="@+id/ride_renderer_action_edit_ride_routine"
+        android:title="@string/activity_ride_feed_item_menu_repeat_edit_all" />
+
+    <item
+        android:id="@+id/ride_renderer_action_cancel"
+        android:title="@string/activity_ride_feed_item_menu_repeat_cancel_this" />
+
+    <item
+        android:id="@+id/ride_renderer_action_cancel_all"
+        android:title="@string/activity_ride_feed_item_menu_repeat_cancel_all" />
+</menu>

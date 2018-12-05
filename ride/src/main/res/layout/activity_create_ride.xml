@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/create_ride_scrollview_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingStart="8dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="8dp">
+
+            <com.deftmove.carpooling.commonui.ui.RoutePathView
+                android:id="@+id/create_ride_route_view"
+                android:layout_width="32dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/create_ride_to_location_text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/create_ride_from_location_text"
+                android:layout_width="0dp"
+                android:layout_height="64dp"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/rounded_primary_background"
+                android:backgroundTint="@color/lightestGrey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/create_ride_route_view"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/create_ride_from_location_label_text"
+                    android:layout_width="52dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="@string/common_from"
+                    android:textAppearance="@style/AppTextAppearance.Subhead.DGrey"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/create_ride_from_location_label_text"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/create_ride_from_location_name_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:hint="@string/activity_create_ride_address_hint"
+                        android:lines="1"
+                        android:textAppearance="@style/AppTextAppearance.Body.Black"
+                        android:textColorHint="@color/grey"
+                        tools:text="Witthof" />
+
+                    <TextView
+                        android:id="@+id/create_ride_from_location_address_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:ellipsize="end"
+                        android:lines="1"
+                        android:textAppearance="@style/AppTextAppearance.Footnote.DGrey"
+                        tools:text="Witthof 17, 22305 Hamburg" />
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/create_ride_to_location_text"
+                android:layout_width="0dp"
+                android:layout_height="64dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/rounded_primary_background"
+                android:backgroundTint="@color/lightestGrey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/create_ride_route_view"
+                app:layout_constraintTop_toBottomOf="@+id/create_ride_from_location_text">
+
+                <TextView
+                    android:id="@+id/create_ride_to_location_label_text"
+                    android:layout_width="52dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="@string/common_to"
+                    android:textAppearance="@style/AppTextAppearance.Subhead.DGrey"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/create_ride_to_location_label_text"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/create_ride_to_location_name_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:hint="@string/activity_create_ride_address_hint"
+                        android:lines="1"
+                        android:textAppearance="@style/AppTextAppearance.Body.Black"
+                        android:textColorHint="@color/grey"
+                        tools:text="Witthof" />
+
+                    <TextView
+                        android:id="@+id/create_ride_to_location_address_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:ellipsize="end"
+                        android:lines="1"
+                        android:textAppearance="@style/AppTextAppearance.Subhead.DGrey"
+                        tools:text="Witthof 17, 22305 Hamburg" />
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/create_ride_swap_locations"
+                style="@style/Widget.MaterialComponents.FloatingActionButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:tint="@color/primary"
+                app:backgroundTint="@color/white"
+                app:layout_constraintBottom_toBottomOf="@+id/create_ride_to_location_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/create_ride_from_location_text"
+                app:maxImageSize="32dp"
+                app:srcCompat="@drawable/ic_swap_vert_black_24dp" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/create_ride_time_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/create_ride_to_location_text">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/create_ride_time_icon"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:background="@drawable/rounded_primary_background"
+                    android:backgroundTint="@color/primary"
+                    android:padding="4dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_access_time_white_24dp" />
+
+                <TextView
+                    android:id="@+id/create_ride_time_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:text="@string/activity_create_ride_time_title"
+                    android:textAppearance="@style/AppTextAppearance.Body.Black"
+                    app:layout_constraintBottom_toBottomOf="@+id/create_ride_time_icon"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/create_ride_time_icon"
+                    app:layout_constraintTop_toTopOf="@+id/create_ride_time_icon" />
+
+                <com.deftmove.carpooling.commonui.ui.CustomTextInputLayout
+                    android:id="@+id/create_ride_time_day"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="8dp"
+                    app:layout_constraintEnd_toStartOf="@+id/create_ride_time_time"
+                    app:layout_constraintHorizontal_weight="2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/create_ride_time_icon"
+                    app:text_input_drawable_type="arrow"
+                    app:text_input_enable="false"
+                    app:text_input_hint="@string/activity_create_ride_time_day" />
+
+                <com.deftmove.carpooling.commonui.ui.CustomTextInputLayout
+                    android:id="@+id/create_ride_time_time"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintStart_toEndOf="@+id/create_ride_time_day"
+                    app:layout_constraintTop_toBottomOf="@+id/create_ride_time_icon"
+                    app:text_input_drawable_type="arrow"
+                    app:text_input_enable="false"
+                    app:text_input_hint="@string/activity_create_ride_time_time" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/create_ride_repeating_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/create_ride_time_layout">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/create_ride_repeating_icon"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:background="@drawable/rounded_primary_background"
+                    android:backgroundTint="@color/primary"
+                    android:padding="4dp"
+                    android:tint="@color/white"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_repeat_black_24dp" />
+
+                <TextView
+                    android:id="@+id/create_ride_repeating_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:text="@string/activity_create_ride_repeating_title"
+                    android:textAppearance="@style/AppTextAppearance.Body.Black"
+                    app:layout_constraintBottom_toBottomOf="@+id/create_ride_repeating_icon"
+                    app:layout_constraintEnd_toStartOf="@+id/create_ride_repeating_switch"
+                    app:layout_constraintStart_toEndOf="@+id/create_ride_repeating_icon"
+                    app:layout_constraintTop_toTopOf="@+id/create_ride_repeating_icon" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/create_ride_repeating_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:padding="16dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/create_ride_repeating_title"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/create_ride_repeating_title" />
+
+                <com.deftmove.carpooling.commonui.ui.CustomTextInputLayout
+                    android:id="@+id/create_ride_repeating_days"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/create_ride_repeating_icon"
+                    app:text_input_enable="false" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/create_ride_continue_button"
+                style="@style/AppTheme.ButtonPrimary"
+                android:layout_width="match_parent"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp"
+                android:layout_marginBottom="24dp"
+                android:enabled="false"
+                android:text="@string/common_continue"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <View
+        android:id="@+id/create_ride_loading_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white80"
+        android:visibility="gone" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

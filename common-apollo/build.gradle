@@ -1,0 +1,28 @@
+apply plugin: 'com.android.library'
+apply from: "$project.rootProject.projectDir/gradle/defaultAndroidLib.gradle"
+apply plugin: 'com.apollographql.apollo' // must be applied after android but before kotlin
+
+buildscript {
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath "com.apollographql.apollo:apollo-gradle-plugin:$APOLLO_VERSION"
+    }
+}
+
+apollo {
+    customTypeMapping = [
+          "DateTime": "java.util.Date",
+          "ID"      : "java.lang.String"
+    ]
+}
+
+dependencies {
+    api("com.apollographql.apollo:apollo-runtime:$APOLLO_VERSION") {
+        exclude group: 'com.squareup.okhttp3'
+    }
+
+    implementation "javax.annotation:jsr250-api:1.0"
+}

@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="0dp"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:elevation="0dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/lightestGrey"
+            app:contentInsetEnd="0dp"
+            app:contentInsetStart="0dp">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/main_avatar_image_view"
+                    android:layout_width="32dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="start|center_vertical"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    app:srcCompat="@drawable/default_avatar_placeholder" />
+
+                <ImageView
+                    android:layout_width="77dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_margin="8dp"
+                    android:src="@drawable/ic_company_logo" />
+
+                <com.deftmove.carpooling.commonui.ui.VerticalIcons
+                    android:id="@+id/main_action_icons"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="end|center_vertical"
+                    android:paddingStart="0dp"
+                    android:paddingEnd="8dp" />
+
+            </FrameLayout>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/lightestGrey"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/home_content_list_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/home_find_ride_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/home_content_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clipToPadding="false"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp" />
+
+                <LinearLayout
+                    android:id="@+id/ride_details_empty_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="136dp"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        app:srcCompat="@drawable/ic_car_black_blue" />
+
+                    <TextView
+                        android:id="@+id/ride_details_empty_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="40dp"
+                        android:layout_marginTop="32dp"
+                        android:layout_marginEnd="40dp"
+                        android:gravity="center"
+                        android:textAppearance="@style/AppTextAppearance.Title.Black"
+                        tools:text="Hi Farhad Sanaei" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="40dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="40dp"
+                        android:gravity="center"
+                        android:text="@string/activity_ride_feed_empty_description"
+                        android:textAppearance="@style/AppTextAppearance.Body.DGrey" />
+
+                </LinearLayout>
+
+            </FrameLayout>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/home_find_ride_button"
+            style="@style/AppTheme.ButtonAction"
+            android:layout_width="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:elevation="4dp"
+            android:text="@string/home_screen_find_ride_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/home_offer_ride_button"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/home_offer_ride_button"
+            style="@style/AppTheme.ButtonAction"
+            android:layout_width="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:elevation="4dp"
+            android:text="@string/home_screen_offer_ride_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/home_find_ride_button" />
+
+        <FrameLayout
+            android:id="@+id/home_loading_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/lightestGrey"
+            android:clickable="true"
+            android:fitsSystemWindows="true"
+            android:focusable="true"
+            app:layout_constraintBottom_toTopOf="@+id/home_find_ride_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+
+        </FrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/home_bottom_sheet_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#99000000"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone" />
+
+    <FrameLayout
+        android:id="@+id/home_bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="4dp"
+        app:behavior_hideable="false"
+        app:behavior_peekHeight="0dp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/lightestGrey"
+            app:cardCornerRadius="8dp"
+            app:contentPadding="24dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/home_screen_inf_bottom_sheet_title"
+                    android:textAppearance="@style/AppTextAppearance.Title.Black" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/home_screen_inf_bottom_sheet_description"
+                    android:textAppearance="@style/AppTextAppearance.Body.DGrey" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/home_bottom_sheet_action_button"
+                    style="@style/AppTheme.ButtonPrimary"
+                    android:layout_width="match_parent"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="24dp"
+                    android:text="@string/home_screen_inf_bottom_sheet_button" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+    </FrameLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

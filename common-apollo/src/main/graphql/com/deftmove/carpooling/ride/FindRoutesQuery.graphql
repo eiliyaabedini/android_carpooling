@@ -1,0 +1,16 @@
+query FindRoutesQuery($input: FindRoutesInput!) {
+    findRoutes(input: $input) {
+        routes {
+            distance
+            duration
+            polyline
+            stopOrder
+            stops {
+                duration
+                location {
+                    ... LocationFragment
+                }
+            }
+        }
+    }
+}

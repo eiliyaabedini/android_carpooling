@@ -1,0 +1,11 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply from: "$project.rootProject.projectDir/gradle/defaultAndroidLib.gradle"
+
+dependencies {
+    implementation project(':common-ui')
+
+    implementation "com.deftmove.heart:heart-map-tools:$HEART_VERSION"
+
+    testImplementation "com.deftmove.heart:heart-test-helpers:$HEART_VERSION"
+}

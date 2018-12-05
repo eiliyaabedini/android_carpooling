@@ -1,0 +1,37 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply from: "$project.rootProject.projectDir/gradle/defaultAndroidLib.gradle"
+
+dependencies {
+    api "com.deftmove.heart:heart:$HEART_VERSION"
+
+    api project(':resources')
+    api project(':interfaces')
+
+    api "androidx.appcompat:appcompat:$APPCOMPAT"
+//    api "androidx.appcompat:appcompat-resources:$APPCOMPAT"
+    api "androidx.core:core-ktx:$CORE_KTX"
+    api "androidx.constraintlayout:constraintlayout:$CONSTRAINT_LAYOUT"
+
+    api "com.google.android.material:material:$ANDROID_MATERIAL"
+    api "com.jakewharton.rxbinding3:rxbinding-core:$RX_BINDING"
+    api "com.jakewharton.rxbinding3:rxbinding-appcompat:$RX_BINDING"
+    api "com.jakewharton.rxbinding3:rxbinding-drawerlayout:$RX_BINDING"
+    api "com.jakewharton.rxbinding3:rxbinding-leanback:$RX_BINDING"
+    api "com.jakewharton.rxbinding3:rxbinding-recyclerview:$RX_BINDING"
+    api "com.jakewharton.rxbinding3:rxbinding-slidingpanelayout:$RX_BINDING"
+    api "com.jakewharton.rxbinding3:rxbinding-swiperefreshlayout:$RX_BINDING"
+    api "com.jakewharton.rxbinding3:rxbinding-viewpager:$RX_BINDING"
+    api "com.jakewharton.rxbinding3:rxbinding-material:$RX_BINDING"
+
+    api "com.github.bumptech.glide:glide:$GLIDE"
+
+    api "com.google.firebase:firebase-dynamic-links:$FIREBASE_DYNAMIC_LINKS"
+
+//  https://github.com/omegasoft7/RecyclerViewSnap
+    api 'com.github.rubensousa:gravitysnaphelper:2.0'
+
+    api 'com.facebook.shimmer:shimmer:0.5.0'
+
+    testImplementation "com.deftmove.heart:heart-test-helpers:$HEART_VERSION"
+}

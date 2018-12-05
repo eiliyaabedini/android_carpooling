@@ -1,0 +1,26 @@
+fragment RideFragment on Ride {
+    destination {
+        ... LocationFragment
+    }
+    distance
+    duration
+    id
+    origin{
+        ... LocationFragment
+    }
+    polyline
+    recommendationsCount
+    role
+    status
+    time
+    invitations {
+      cancelledAt
+      confirmedAt
+      senderId
+      passengerId
+      driverId
+      grossPrice {
+        ... MoneyFragment
+      }
+    }
+}

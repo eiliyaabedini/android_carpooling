@@ -1,0 +1,19 @@
+fragment RideForDetailsFragment on Ride {
+    id
+    destination {
+        ... LocationFragment
+    }
+    origin {
+        ... LocationFragment
+    }
+    polyline
+    recommendationsCount
+    role
+    time
+    invitations {
+        ... InvitationForRideDetailsFragment
+    }
+     recommendations(limit: 10, offset: 0) {
+        ... RecommendationForRideDetailsFragment
+     }
+}
