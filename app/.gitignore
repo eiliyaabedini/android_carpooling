@@ -7,11 +7,12 @@
 /.idea/workspace.xml
 /.idea/navEditor.xml
 /.idea/assetWizardSettings.xml
-.DS_Store
 /build
 /captures
 .externalNativeBuild
 
+/keystore
+google-services.json
 
 # Gradle files
 .gradle/
@@ -25,7 +26,6 @@ local.properties
 .DS_Store
 
 # JetBrains
-*.iml
 .idea/
 !/.idea/codeStyleSettings.xml
 !/.idea/fileTemplates/
