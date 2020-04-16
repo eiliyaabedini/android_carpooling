@@ -1,10 +1,16 @@
 name: Android CI
+#https://medium.com/@wkrzywiec/github-actions-for-android-first-approach-f616c24aa0f9
 
-on: [push]
+on:
+  push:
+    branches:
+      - '*'
+      - '!master'
+      - '!release*'
 
 jobs:
-  build:
-
+  test:
+    name: Run Unit Tests
     runs-on: ubuntu-latest
 
     steps:
@@ -13,5 +19,5 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 1.8
-      - name: Build with Gradle
+      - name: Unit Tests
         run: ./gradlew detekt testDebugUnitTest runTestsInCI '-PCI=true'
