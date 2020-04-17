@@ -305,4 +305,35 @@ class CreateRideReviewPresenterTest {
 
         verify(mockCommonView).showContentError()
     }
+
+    @Test
+    fun `when user didn't define car detail then disable submit button and show an error`() {
+        val mockUser: UserModel = mock {
+            on { carModel } doReturn null
+            on { carLicensePlate } doReturn null
+        }
+
+        whenever(mockCurrentUserManager.getUserModel()).then {  mockUser}
+
+        presenter.attachView(mockView, mockCommonView)
+        presenter.initialise()
+
+        // TODO check for disable submit button invoked
+        // TODO check for show appropriate error
+    }
+
+    @Test
+    fun `when user has defined car detail then don't disable submit button`() {
+        val mockUser: UserModel = mock {
+            on { carModel } doReturn null
+            on { carLicensePlate } doReturn null
+        }
+
+        whenever(mockCurrentUserManager.getUserModel()).then {  mockUser}
+
+        presenter.attachView(mockView, mockCommonView)
+        presenter.initialise()
+
+        // TODO check for disable submit button not invoked
+    }
 }
