@@ -22,13 +22,7 @@ import com.deftmove.heart.interfaces.navigator.HeartNavigator
 import com.deftmove.heart.testhelper.TestReactiveTransformer
 import com.deftmove.heart.testhelper.navigator.ActivityLauncherOpenTest
 import com.deftmove.heart.testhelper.thenJust
-import com.nhaarman.mockitokotlin2.any
-import com.nhaarman.mockitokotlin2.anyOrNull
-import com.nhaarman.mockitokotlin2.doReturn
-import com.nhaarman.mockitokotlin2.mock
-import com.nhaarman.mockitokotlin2.reset
-import com.nhaarman.mockitokotlin2.verify
-import com.nhaarman.mockitokotlin2.whenever
+import com.nhaarman.mockitokotlin2.*
 import io.reactivex.subjects.PublishSubject
 import org.junit.Test
 import java.util.Date
@@ -318,15 +312,15 @@ class CreateRideReviewPresenterTest {
         presenter.attachView(mockView, mockCommonView)
         presenter.initialise()
 
-        // TODO check for disable submit button invoked
-        // TODO check for show appropriate error
+        verify(mockView).disableSubmitButton()
+        verify(mockView).showMustUpdateCarDetailTitle()
     }
 
     @Test
     fun `when user has defined car detail then don't disable submit button`() {
         val mockUser: UserModel = mock {
-            on { carModel } doReturn null
-            on { carLicensePlate } doReturn null
+            on { carModel } doReturn "mockCarModel"
+            on { carLicensePlate } doReturn "mockCarLicense"
         }
 
         whenever(mockCurrentUserManager.getUserModel()).then {  mockUser}
@@ -334,6 +328,6 @@ class CreateRideReviewPresenterTest {
         presenter.attachView(mockView, mockCommonView)
         presenter.initialise()
 
-        // TODO check for disable submit button not invoked
+        verify(mockView, never()).disableSubmitButton()
     }
 }
