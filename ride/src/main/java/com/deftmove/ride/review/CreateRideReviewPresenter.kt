@@ -91,7 +91,13 @@ class CreateRideReviewPresenter(
 
         currentUserManager.getUserModel()?.let { userModel ->
             view?.showCarDetails(userModel.carModel, userModel.carLicensePlate)
+
+            if (userModel.carModel == null || userModel.carLicensePlate == null) {
+                view?.disableSubmitButton()
+                view?.showMustUpdateCarDetailTitle()
+            }
         }
+
         view?.showStartTime(currentCreateRideModel.startTime)
         view?.showRepeating(currentCreateRideModel.repeat)
 
