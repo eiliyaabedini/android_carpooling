@@ -155,6 +155,7 @@
                     app:srcCompat="@drawable/ic_car_white_24dp" />
 
                 <TextView
+                    android:id="@+id/create_ride_review_car_details_title_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"

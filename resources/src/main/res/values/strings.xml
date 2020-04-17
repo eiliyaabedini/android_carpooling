@@ -90,6 +90,7 @@
     <string name="activity_create_ride_review_create_button">Offer a ride</string>
     <string name="activity_create_ride_review_save_button">Save ride</string>
     <string name="activity_create_ride_review_days_every">Repeats every %s</string>
+    <string name="activity_create_ride_review_must_update_car_detail">You must update car detail</string>
 
     <plurals name="activity_ride_feed_item_driver_recommendation_count">
         <item quantity="one">%d available passenger</item>

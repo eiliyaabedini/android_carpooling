@@ -139,6 +139,8 @@ class CreateRideReviewPresenter(
         fun showDestinationAddress(destination: SearchAddressPrediction, time: Date)
         fun showPickupPointAddresses(stops: List<Pair<Location, Date>>)
         fun showSaveButton()
+        fun disableSubmitButton()
+        fun showMustUpdateCarDetailTitle()
     }
 
     sealed class Action : PresenterAction {

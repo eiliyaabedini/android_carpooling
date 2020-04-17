@@ -129,6 +129,14 @@ class CreateRideReviewActivity : ActivityWithPresenter() {
                     override fun showSaveButton() {
                         submitButton.setText(R.string.activity_create_ride_review_save_button)
                     }
+
+                    override fun disableSubmitButton() {
+                        submitButton.setText(R.string.activity_create_ride_review_save_button)
+                    }
+
+                    override fun showMustUpdateCarDetailTitle() {
+                        txtCarDetailTitle.text = getString(R.string.activity_create_ride_review_must_update_car_detail)
+                    }
                 }
             }
         }
@@ -147,6 +155,7 @@ class CreateRideReviewActivity : ActivityWithPresenter() {
     private val routePathView: com.deftmove.carpooling.commonui.ui.RoutePathView by bindView(R.id.create_ride_review_route_path)
     private val routeOrigin: ReviewPickupItemView by bindView(R.id.create_ride_review_route_origin)
     private val routeDestination: ReviewPickupItemView by bindView(R.id.create_ride_review_route_destination)
+    private val txtCarDetailTitle: TextView by bindView(R.id.create_ride_review_car_details_title_text)
     private val routes: LinearLayout by bindView(R.id.create_ride_review_routes)
     private val txtCarModel: TextView by bindView(R.id.create_ride_review_car_model_text)
     private val txtCarLicenseNumber: TextView by bindView(R.id.create_ride_review_car_number_text)
