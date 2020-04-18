@@ -131,7 +131,7 @@ class CreateRideReviewActivity : ActivityWithPresenter() {
                     }
 
                     override fun disableSubmitButton() {
-                        submitButton.setText(R.string.activity_create_ride_review_save_button)
+                        submitButton.isEnabled = false
                     }
 
                     override fun showMustUpdateCarDetailTitle() {
