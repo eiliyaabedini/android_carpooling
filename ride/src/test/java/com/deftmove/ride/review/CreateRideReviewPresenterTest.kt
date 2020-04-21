@@ -307,7 +307,7 @@ class CreateRideReviewPresenterTest {
             on { carLicensePlate } doReturn null
         }
 
-        whenever(mockCurrentUserManager.getUserModel()).then {  mockUser}
+        whenever(mockCurrentUserManager.getUserModel()).then { mockUser }
 
         presenter.attachView(mockView, mockCommonView)
         presenter.initialise()
@@ -323,7 +323,7 @@ class CreateRideReviewPresenterTest {
             on { carLicensePlate } doReturn "mockCarLicense"
         }
 
-        whenever(mockCurrentUserManager.getUserModel()).then {  mockUser}
+        whenever(mockCurrentUserManager.getUserModel()).then { mockUser }
 
         presenter.attachView(mockView, mockCommonView)
         presenter.initialise()
